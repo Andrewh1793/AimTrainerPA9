@@ -1,3 +1,9 @@
+#include <SFML/Graphics.hpp>
+#include "Target.h"
+#include "PowerUpTarget.h"
+#include <vector>
+#include <cstdlib>
+#include <ctime>
 #include "menu.h"
 
 int main() {
