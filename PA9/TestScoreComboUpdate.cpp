@@ -2,7 +2,8 @@
 #include <vector>
 #include "Target.h"
 
-void testScoreComboUpdate() {
+void testScoreComboUpdate() 
+{
     int score = 0;
     int combo = 0;
     std::vector<Target*> targets;
@@ -11,8 +12,10 @@ void testScoreComboUpdate() {
     sf::Vector2i clickPosition(110, 110);
 
     // Simulate a hit
-    for (auto it = targets.begin(); it != targets.end(); ++it) {
-        if ((*it)->isHit(clickPosition)) {
+    for (auto it = targets.begin(); it != targets.end(); ++it) 
+    {
+        if ((*it)->isHit(clickPosition)) 
+        {
             score += 10;
             combo++;
             delete* it;
@@ -22,10 +25,12 @@ void testScoreComboUpdate() {
     }
 
     // Test
-    if (score == 10 && combo == 1) {
+    if (score == 10 && combo == 1) 
+    {
         std::cout << "Test Passed: Score and combo updated correctly.\n";
     }
-    else {
+    else 
+    {
         std::cout << "Test Failed: Score or combo not updated correctly.\n";
     }
 

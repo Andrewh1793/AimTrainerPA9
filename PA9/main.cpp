@@ -9,18 +9,22 @@
 
 
 
-int main() {
+int main() 
+{
     sf::RenderWindow window(sf::VideoMode(800, 600), "Aim Trainer");
     sf::Font font;
 
-    if (!font.loadFromFile("arial.ttf")) {
+    if (!font.loadFromFile("arial.ttf")) 
+    {
         throw std::runtime_error("Failed to load font (arial.ttf)");
     }
 
-    while (window.isOpen()) {
+    while (window.isOpen()) 
+    {
         int menuChoice = showMenu(window);
 
-        switch (menuChoice) {
+        switch (menuChoice) 
+        {
         case 0:
             runGame(window, font);
             break;
