@@ -21,4 +21,8 @@ private:
     int hoveredIndex;
 };
 
+void runGame(sf::RenderWindow& window, const sf::Font& font);
+int showMenu(sf::RenderWindow& window);
+void showHowToPlay(sf::RenderWindow& window, const sf::Font& font);
+
 #endif

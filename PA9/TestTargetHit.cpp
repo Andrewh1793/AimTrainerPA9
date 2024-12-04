@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Target.h"
 
-int main() {
+void testTargetHit() {
     Target target(100, 100, 20);
 
     // Test Case: Hit detection
@@ -22,5 +22,5 @@ int main() {
         std::cout << "Test Failed: Target should register miss.\n";
     }
 
-    return 0;
+    //return 0;
 }

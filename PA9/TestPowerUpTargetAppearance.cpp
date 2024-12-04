@@ -1,7 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include "PowerUpTarget.h"
+#include <iostream>
 
-int main() {
+void testPowerUpTargetAppearance() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Test PowerUpTarget");
     PowerUpTarget powerUpTarget(200, 200, 30);
 
@@ -20,5 +21,5 @@ int main() {
     }
 
     std::cout << "Test Passed: Verify the visual appearance manually (Green fill, Yellow outline).\n";
-    return 0;
+    //return 0;
 }

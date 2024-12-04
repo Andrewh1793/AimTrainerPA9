@@ -134,15 +134,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="PowerUpTarget.cpp" />
     <ClCompile Include="Target.cpp" />
+    <ClCompile Include="TestPowerUpActivation.cpp" />
+    <ClCompile Include="TestPowerUpTargetAppearance.cpp" />
+    <ClCompile Include="TestScoreComboUpdate.cpp" />
+    <ClCompile Include="TestSpawnLogic.cpp" />
+    <ClCompile Include="TestTargetHit.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="menu.h" />
     <ClInclude Include="PowerUpTarget.h" />
     <ClInclude Include="Target.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="arial.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="shootingRange.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

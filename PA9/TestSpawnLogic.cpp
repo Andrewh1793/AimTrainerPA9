@@ -2,7 +2,7 @@
 #include <vector>
 #include "Target.h"
 
-int main() {
+void testSpawnLogic() {
     std::vector<Target*> targets;
 
     // test spawning targets
@@ -36,5 +36,5 @@ int main() {
         delete target;
     }
 
-    return 0;
+    //return 0;
 }

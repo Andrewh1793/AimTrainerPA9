@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main() {
+void testPowerUpActivation() {
     int combo = 0;
     bool powerUpMode = false;
 
@@ -20,5 +20,5 @@ int main() {
         std::cout << "Test Failed: Power-up mode not activated after 10 hits.\n";
     }
 
-    return 0;
+    //return 0;
 }

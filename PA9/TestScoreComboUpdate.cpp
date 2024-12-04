@@ -2,7 +2,7 @@
 #include <vector>
 #include "Target.h"
 
-int main() {
+void testScoreComboUpdate() {
     int score = 0;
     int combo = 0;
     std::vector<Target*> targets;
@@ -29,5 +29,5 @@ int main() {
         std::cout << "Test Failed: Score or combo not updated correctly.\n";
     }
 
-    return 0;
+    //return 0;
 }
