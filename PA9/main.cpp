@@ -6,21 +6,8 @@
 #include <ctime>
 #include "menu.h"
 
-int main() {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Menu");
-    sf::Font font;
-
-    if (!font.loadFromFile("arial.ttf")) {
-        throw std::runtime_error("Failed to load font (arial.ttf)");
-    }
-
-    while (window.isOpen()) {
-        int menuChoice = showMenu(window);
-
-        switch (menuChoice) {
-        case 0:
-            sf::RenderWindow window(sf::VideoMode(800, 600), "Aim Trainer");
-            std::vector<Target*> targets;
+void runGame(sf::RenderWindow& window, const sf::Font& font) {
+    std::vector<Target*> targets;
 
     srand(static_cast<unsigned>(time(nullptr)));
 
@@ -29,9 +16,6 @@ int main() {
     bool powerUpMode = false;
     float powerUpTimer = 0.0f;
     float spawnTimer = 0.0f;
-
-    sf::Font font;
-    font.loadFromFile("arial.ttf");
 
     sf::Text scoreText("Score: 0", font, 24);
     scoreText.setFillColor(sf::Color::White);
@@ -46,20 +30,22 @@ int main() {
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
+            if (event.type == sf::Event::Closed) {
                 window.close();
+            }
 
             if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
                 bool hit = false;
 
-                for (auto it = targets.begin(); it != targets.end(); ++it) {
+                for (auto it = targets.begin(); it != targets.end();) {
                     if ((*it)->isHit(sf::Mouse::getPosition(window))) {
                         hit = true;
                         score += 10;
                         combo++;
-                        delete* it;
-                        targets.erase(it);
-                        break;
+                        delete *it;
+                        it = targets.erase(it);
+                    } else {
+                        ++it;
                     }
                 }
 
@@ -98,8 +84,7 @@ int main() {
             spawnTimer = 0.0f;
             if (powerUpMode) {
                 targets.push_back(new PowerUpTarget(rand() % 750, rand() % 550, 30));
-            }
-            else {
+            } else {
                 targets.push_back(new Target(rand() % 750, rand() % 550, 20));
             }
         }
@@ -119,30 +104,11 @@ int main() {
         window.display();
     }
 
-    for (auto& target : targets)
+    for (auto& target : targets) {
         delete target;
-
-    return 0;
-}
-            break;
-
-        case 1:
-            showHowToPlay(window, font); // Show "How to Play" screen
-            break;
-
-        case 2:
-            window.close();
-            break;
-
-        default:
-            break;
-        }
     }
-
-    return 0;
 }
-
-
+    
 void showHowToPlay(sf::RenderWindow& window, const sf::Font& font) {
     sf::Text howToPlayText(
         "How to Play:\n\n"
@@ -204,4 +170,36 @@ int showMenu(sf::RenderWindow& window) {
     }
 
     return -1;
+}
+
+int main() {
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Menu");
+    sf::Font font;
+
+    if (!font.loadFromFile("arial.ttf")) {
+        throw std::runtime_error("Failed to load font (arial.ttf)");
+    }
+
+    while (window.isOpen()) {
+        int menuChoice = showMenu(window);
+
+        switch (menuChoice) {
+        case 0:
+            runGame(window, font); // Start the game
+            break;
+
+        case 1:
+            showHowToPlay(window, font); // Show "How to Play" screen
+            break;
+
+        case 2:
+            window.close();
+            break;
+
+        default:
+            break;
+        }
+    }
+
+    return 0;
 }
