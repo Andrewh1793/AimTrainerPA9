@@ -1,7 +1,17 @@
 #include <SFML/Graphics.hpp>
 #include "PowerUpTarget.h"
 #include <iostream>
-
+/*************************************************************
+ * Function: testPowerUpTargetAppearance()                  *
+ * Description: Tests the appearance of the PowerUpTarget by *
+ * rendering it in a window for manual visual inspection.    *
+ * Input parameters: None                                   *
+ * Returns: None                                            *
+ * Preconditions: PowerUpTarget class is implemented and    *
+ * functional, SFML is properly set up.                     *
+ * Postconditions: The PowerUpTarget is displayed in a      *
+ * window for manual appearance verification.               *
+ *************************************************************/
 void testPowerUpTargetAppearance() 
 {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Test PowerUpTarget");
