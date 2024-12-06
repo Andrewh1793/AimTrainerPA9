@@ -1,5 +1,14 @@
 #include <iostream>
-
+/*************************************************************
+ * Function: testPowerUpActivation()                        *
+ * Description: Tests the activation of power-up mode after *
+ * achieving a combo of 10 consecutive hits.                *
+ * Input parameters: None                                   *
+ * Returns: None                                            *
+ * Preconditions: Power-up logic is implemented correctly.  *
+ * Postconditions: The test results for power-up activation *
+ * are printed to the console.                              *
+ *************************************************************/
 void testPowerUpActivation() 
 {
     int combo = 0;
