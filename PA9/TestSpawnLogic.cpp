@@ -1,7 +1,16 @@
 #include <iostream>
 #include <vector>
 #include "Target.h"
-
+/*************************************************************
+ * Function: testSpawnLogic()                                *
+ * Description: Tests the spawning logic for a collection of *
+ * targets and verifies their hit and miss detection.        *
+ * Input parameters: None                                    *
+ * Returns: None                                             *
+ * Preconditions: Target class is implemented and functional.*
+ * Postconditions: Results of spawning logic and hit/miss    *
+ * detection tests are printed to the console.               *
+ *************************************************************/
 void testSpawnLogic() 
 {
     std::vector<Target*> targets;
