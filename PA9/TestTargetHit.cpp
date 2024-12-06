@@ -1,6 +1,16 @@
 #include <iostream>
 #include "Target.h"
-
+/*************************************************************
+ * Function: testTargetHit()                                 *
+ * Description: Tests the hit detection functionality of the *
+ * Target class. Includes test cases for detecting hits and  *
+ * misses based on the mouse position.                      *
+ * Input parameters: None                                    *
+ * Returns: None                                             *
+ * Preconditions: Target class and SFML are initialized.     *
+ * Postconditions: Results of the hit and miss tests are     *
+ * printed to the console.                                   *
+ *************************************************************/
 void testTargetHit() 
 {
     Target target(100, 100, 20);
