@@ -5,26 +5,74 @@
 
 #include <SFML/Graphics.hpp>
 
+/*************************************************************
+ * Class: Target                                             *
+ * Description: Represents a target object that can be drawn *
+ * and interacted with.                                      *
+ *************************************************************/
 class Target {
 
-
 public:
-    //constructor
+    /*********************************************************
+     * Function: Target(float x, float y, float r)           *
+     * Description: Constructor that initializes the target  *
+     * with position and radius.                             *
+     * Input parameters: x (float), y (float), r (float)     *
+     * Returns: None                                         *
+     * Preconditions: None                                   *
+     * Postconditions: Target is initialized.               *
+     *********************************************************/
     Target(float x, float y, float r);
-    //function to draw the target to the screen
+
+    /*********************************************************
+     * Function: draw(sf::RenderWindow& window)              *
+     * Description: Draws the target on the specified window.*
+     * Input parameters: window (sf::RenderWindow&)          *
+     * Returns: None                                         *
+     * Preconditions: Window is initialized.                 *
+     * Postconditions: Target is drawn on the window.        *
+     *********************************************************/
     virtual void draw(sf::RenderWindow& window);
-    //Function to check if the target was hit
+
+    /*********************************************************
+     * Function: isHit(sf::Vector2i mousePosition)           *
+     * Description: Checks if the target is hit based on the *
+     * mouse position.                                       *
+     * Input parameters: mousePosition (sf::Vector2i)        *
+     * Returns: bool - True if hit, false otherwise.         *
+     * Preconditions: Mouse position is valid.               *
+     * Postconditions: Returns true if the target is hit.    *
+     *********************************************************/
     virtual bool isHit(sf::Vector2i mousePosition);
 
-    //destructor
+    /*********************************************************
+     * Function: ~Target()                                   *
+     * Description: Virtual destructor for cleanup.          *
+     * Input parameters: None                                *
+     * Returns: None                                         *
+     * Preconditions: None                                   *
+     * Postconditions: Object is properly destructed.        *
+     *********************************************************/
     virtual ~Target() = default;
 
 protected:
-    //Circle shape for target
+    /*********************************************************
+     * Member: shape                                         *
+     * Description: Represents the circular shape of the     *
+     * target.                                               *
+     *********************************************************/
     sf::CircleShape shape;
-    //Radius of target
+
+    /*********************************************************
+     * Member: radius                                        *
+     * Description: Radius of the target.                    *
+     *********************************************************/
     float radius;
-    //Position of target on screen
+
+    /*********************************************************
+     * Member: position                                      *
+     * Description: Position of the target on the screen.    *
+     *********************************************************/
     sf::Vector2f position;
 };
 
