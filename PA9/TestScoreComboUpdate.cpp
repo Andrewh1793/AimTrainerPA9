@@ -1,7 +1,16 @@
 #include <iostream>
 #include <vector>
 #include "Target.h"
-
+/*************************************************************
+ * Function: testScoreComboUpdate()                         *
+ * Description: Tests the score and combo update logic when *
+ * a target is hit.                                         *
+ * Input parameters: None                                   *
+ * Returns: None                                            *
+ * Preconditions: Target class is implemented and functional.*
+ * Postconditions: Results of score and combo updates are   *
+ * printed to the console.                                  *
+ *************************************************************/
 void testScoreComboUpdate() 
 {
     int score = 0;
